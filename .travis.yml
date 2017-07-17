@@ -1,0 +1,25 @@
+sudo: required
+
+language: python
+python:
+  - 2.7
+  - 3.5
+  - 3.6
+
+env:
+  - NGINX_CONFIG=basic
+
+install:
+  - sudo apt-get install nginx
+  - sudo service nginx start
+
+script:
+  - cp configs/$NGINX_CONFIG /etc/nginx/sites-available
+  - ln -s /etc/nginx/sites-available/$NGINX_CONFIG /etc/nginx/sites-enabled
+  - nginx -t
+  - sudo service nginx restart
+  - nohup python app.py
+  - python -m unittest test.live_test_$NGINX_CONFIG
+
+notifications:
+  email: false
