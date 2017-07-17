@@ -14,9 +14,9 @@ install:
   - sudo service nginx start
 
 script:
-  - cp configs/$NGINX_CONFIG /etc/nginx/sites-available
-  - ln -s /etc/nginx/sites-available/$NGINX_CONFIG /etc/nginx/sites-enabled
-  - nginx -t
+  - sudo cp configs/$NGINX_CONFIG /etc/nginx/sites-available
+  - sudo ln -s /etc/nginx/sites-available/$NGINX_CONFIG /etc/nginx/sites-enabled
+  - sudo nginx -t
   - sudo service nginx restart
   - nohup python app.py
   - python -m unittest test.live_test_$NGINX_CONFIG
