@@ -19,7 +19,7 @@ script:
   - sudo ln -s /etc/nginx/sites-available/$NGINX_CONFIG /etc/nginx/sites-enabled
   - sudo nginx -t
   - sudo service nginx restart
-  - nohup python app.py
+  - nohup python app.py &
   - python -m unittest test.live_test_$NGINX_CONFIG
 
 notifications:
