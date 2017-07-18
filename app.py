@@ -1,11 +1,20 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 
 
 def create_app():
     app = Flask(__name__)
 
+    def get_data(request):
+        return {
+            'headers': request.headers
+        }
+
     @app.route('/'):
         return "OK"
+
+    @app.route('/json'):
+        data = get_data(request)
+        return jsonify(data)
 
     return app
 
