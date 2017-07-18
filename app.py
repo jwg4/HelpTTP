@@ -9,10 +9,13 @@ def create_app():
             'headers': request.headers
         }
 
-    @app.route('/'):
-        return "OK"
+    @app.route('/')
+    def get_html_data():
+        data = get_data(request)
+        return render_template("index.html", data=data)
 
-    @app.route('/json'):
+    @app.route('/json')
+    def get_json_data():
         data = get_data(request)
         return jsonify(data)
 

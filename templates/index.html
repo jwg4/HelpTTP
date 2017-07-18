@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Web request details</title>
+<table>
+    <thead>
+        <th>Header</th>
+        <th>Value</th>
+    </thead>
+{% for header in data['headers'] %}
+    <tr>
+        <th>{{ header }}</th>
+        <th>{{ data['headers'][header] }}</th>
+    </tr>
+{% endfor %}
+</table>
