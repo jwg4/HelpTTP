@@ -1,6 +1,6 @@
 import unittest
 
-from base_test import BaseTestCase
+from .base_test import BaseTestCase
 
 
 class TestBasicProxy(BaseTestCase, unittest.TestCase):
