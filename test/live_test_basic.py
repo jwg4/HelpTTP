@@ -8,7 +8,7 @@ class TestBasicProxy(unittest.TestCase):
         r = requests.get("http://localhost:80/")
         self.assertEqual(r.status_code, 200)
 
-    def test_can_retrievei_json(self):
+    def test_can_retrieve_json(self):
         r = requests.get("http://localhost:80/json")
         self.assertEqual(r.status_code, 200)
 
