@@ -9,8 +9,8 @@ def create_app():
             'headers': request.headers
         }
 
-    @app.route('/')
-    def get_html_data():
+    @app.route('/<path:dummy>')
+    def get_html_data(dummy):
         data = get_data(request)
         return render_template("index.html", data=data)
 
