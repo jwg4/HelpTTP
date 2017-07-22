@@ -1,4 +1,15 @@
+from collections import defaultdict
+
 from flask import Flask, request, jsonify, render_template
+
+EXTRA_INFO = {
+    header_tips: defaultdict(
+        lambda: "",
+        **{
+            "Host": "By default, nginx reverse proxying will redefine this to the gateway host."
+        }
+    )
+}
 
 
 def create_app():
@@ -12,7 +23,7 @@ def create_app():
     @app.route('/<path:dummy>')
     def get_html_data(dummy):
         data = get_data(request)
-        return render_template("index.html", data=data)
+        return render_template("index.html", data=data, extra=EXTRA_INFO)
 
     @app.route('/json')
     def get_json_data():
