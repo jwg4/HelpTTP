@@ -21,6 +21,7 @@ script:
   - sudo nginx -t
   - sudo service nginx restart
   - nohup python app.py &
+  - sleep 5
   - python -m unittest test.live_test_$NGINX_CONFIG
 
 notifications:
