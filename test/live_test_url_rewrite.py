@@ -1,5 +1,7 @@
 import unittest
 
+import requests
+
 from .base_test import BaseTestCase
 
 
