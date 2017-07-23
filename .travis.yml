@@ -9,6 +9,7 @@ python:
 env:
   - NGINX_CONFIG=basic
   - NGINX_CONFIG=port_number
+  - NGINX_CONFIG=url_rewrite
 
 install:
   - sudo apt-get install nginx
