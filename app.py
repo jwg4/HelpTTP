@@ -28,15 +28,15 @@ def create_app():
             }
         }
 
-    @app.route('/<path:dummy>')
-    def get_html_data(dummy):
-        data = get_data(request)
-        return render_template("index.html", data=data, extra=EXTRA_INFO)
-
     @app.route('/json')
     def get_json_data():
         data = get_data(request)
         return jsonify(data)
+
+    @app.route('/<path:dummy>')
+    def get_html_data(dummy):
+        data = get_data(request)
+        return render_template("index.html", data=data, extra=EXTRA_INFO)
 
     return app
 
