@@ -17,7 +17,15 @@ def create_app():
 
     def get_data(request):
         return {
-            'headers': request.headers
+            'headers': request.headers,
+            'address': {
+                'path': request.path,
+                'full_path': request.full_path,
+                'script_root': request.script_root,
+                'url': request.url,
+                'base_url': request.base_url,
+                'url_root': request.url_root
+            }
         }
 
     @app.route('/<path:dummy>')
