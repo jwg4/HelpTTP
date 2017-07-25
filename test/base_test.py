@@ -28,4 +28,4 @@ class BaseTestCase(object):
 
     def test_is_json(self):
         r = requests.get(self.url + "/json")
-        self.assertEqual(r.headers['content-type'], "application/json")
+        self.assertEqual(r.headers['content-type'], "application/json", r.content[:100])
