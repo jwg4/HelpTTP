@@ -13,8 +13,8 @@ env:
 
 install:
   - sudo apt-get install nginx
-  - sudo mkdir /etc/nginx/sites-available
-  - sudo mkdir /etc/nginx/sites-enabled
+  - sudo mkdir -p /etc/nginx/sites-available
+  - sudo mkdir -p /etc/nginx/sites-enabled
   - sudo cp configs/nginx.conf /etc/nginx/nginx.conf
   - sudo nginx -t
   - sudo service nginx start
