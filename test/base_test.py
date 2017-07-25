@@ -1,5 +1,6 @@
 import unittest
 
+from bs4 import BeautifulSoup
 import requests
 
 
@@ -19,6 +20,11 @@ class BaseTestCase(object):
     def test_is_http(self):
         r = requests.get(self.url + "/")
         self.assertEqual(r.headers['content-type'], "text/html")
+
+    def test_http_parsing(self):
+        r = requests.get(self.url + "/")
+        bs = BeautifulSoup(r.content)
+        self.assertEqual(bs.title, "Web request details")
 
     def test_is_json(self):
         r = requests.get(self.url + "/json")
