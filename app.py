@@ -35,7 +35,6 @@ def create_app():
 
     @app.route('<path:dummy>')
     def get_html_data(dummy):
-        print(dummy)
         if 'json' in dummy:
             return get_json_data()
         data = get_data(request)
