@@ -10,6 +10,7 @@ env:
   - NGINX_CONFIG=basic
   - NGINX_CONFIG=port_number
   - NGINX_CONFIG=url_rewrite
+  - NGINX_CONFIG=empty
 
 install:
   - sudo apt-get install nginx
