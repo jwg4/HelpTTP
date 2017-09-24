@@ -40,6 +40,10 @@ def create_app():
         data = get_data(request)
         return render_template("index.html", data=data, extra=EXTRA_INFO)
 
+    @app.route('/')
+    def get_root():
+        return get_html_data("")
+
     return app
 
 
