@@ -17,7 +17,7 @@ def create_app():
 
     def get_data(request):
         return {
-            'headers': request.headers,
+            'headers': dict(request.headers),
             'address': {
                 'path': request.path,
                 'full_path': request.full_path,
