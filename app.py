@@ -33,7 +33,7 @@ def create_app():
         data = get_data(request)
         return jsonify(data)
 
-    @app.route('<path:dummy>')
+    @app.route('/<path:dummy>')
     def get_html_data(dummy):
         if 'json' in dummy:
             return get_json_data()
