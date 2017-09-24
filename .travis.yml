@@ -31,5 +31,11 @@ script:
   - sleep 5
   - python -m unittest test.live_test_$NGINX_CONFIG
 
+matrix:
+  allow_failures:
+    env:
+      - NGINX_CONFIG=port_number
+      - NGINX_CONFIG=url_rewrite
+
 notifications:
   email: false
