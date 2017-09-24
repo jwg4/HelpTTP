@@ -3,7 +3,7 @@ from collections import defaultdict
 from flask import Flask, request, jsonify, render_template
 
 EXTRA_INFO = {
-    header_tips: defaultdict(
+    'header_tips': defaultdict(
         lambda: "",
         **{
             "Host": "By default, nginx reverse proxying will redefine this to the gateway host."
