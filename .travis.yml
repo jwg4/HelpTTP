@@ -25,6 +25,7 @@ install:
 script:
   - sudo cp configs/$NGINX_CONFIG /etc/nginx/sites-available
   - sudo ln -s /etc/nginx/sites-available/$NGINX_CONFIG /etc/nginx/sites-enabled
+  - sudo cp configs/conf.d/$NGINX_CONFIG.conf /etc/nginx/conf.d
   - sudo nginx -t
   - sudo service nginx restart
   - nohup python app.py &
